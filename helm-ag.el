@@ -432,11 +432,11 @@ They are specified to `--ignore' options."
       ;; compilation minor mode is better than grep mode.
       ;; With this change, helm-ag doesn't need a separate "save" and "edit" function,
       ;; because now we can do both.
-      (compilation-minor-mode)
+      (compilation-minor-mode 1)
       ;; Now disable compilation minor mode. The desired functions will still be defined.
       ;; Not sure why this works. If you don't do it, fundamental mode doesn't work anymore
       ;; (normal input keys are undefined) so you can't edit the buffer.
-      (compilation-minor-mode)
+      (compilation-minor-mode -1)
 
       (add-text-properties (point-min) (point-max)
                            '(read-only t rear-nonsticky t front-sticky t))
